@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<sys/socket.h>
+#include<sys/types.h>
+#include<netinet/in.h>
+#include<netinet/ip.h>
+
+
+nt main()i
+{
+    int sock_fd,data_fd,len;
+
+    struct sockaddr_in serveraddr;
+
+    sock_fd=socket(AF_INET,SOCK_STREM,0);
+
+
+    serveraddr.sin_family=AF_INET;
+    serveraddr.sin_port=htons(5000);
+    serveraddr.sin_addr.s_addr=inet_addr("127.0.0.1");
+    
+    bind(sock_fd,(struct sockadd *)&serveraddr,size);
+}
+

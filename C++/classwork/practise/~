@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+class shape
+{
+	int len,bred;
+	public:
+	shape(int len =0 , int bred =0 ) : len(len) , bred(bred) {}
+	void area()
+	{
+		cout << "shape class" << endl;
+	}
+};
+
+class rectangle : public shape
+{
+	public:
+		rectangle(int len = 0 , int bred = 0) : shape(len,bred) {}
+		void area()
+		{
+			cout << " rectangle class " << endl;
+		}
+};
+
+int main()
+{
+	shape s;
+	rectangle r;
+	s.area();
+	r.area();
+}

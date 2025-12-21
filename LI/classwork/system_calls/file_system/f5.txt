@@ -1,0 +1,5 @@
+fd after crating: 3
+hello
+hello
+world
+stdout restored

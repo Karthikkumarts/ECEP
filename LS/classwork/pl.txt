@@ -1,0 +1,55 @@
+siajfhjas sfhljas
+afhjhfsdjhg hasdfj
+jhasdgj hsgdfjh
+shadj jhasfdjgk jhdsgflja
+jhdsjfjg
+colours.txt
+dektop
+Desktop
+Documents
+Downloads
+ecep
+ECEP
+even.sh
+fi2.sh
+fi4.sh
+fi5.sh
+fi.sh
+forcloop.sh
+ghj.txt
+ghj.txt~
+in.txt
+jkl1.txt
+jkl.txt
+kar
+kl
+ko.sh
+kp.sh
+la
+loopseq.sh
+lp
+ls
+Music
+my l
+output.txt
+pen
+pencil
+perimeter.txt
+Pictures
+pl.txt
+po
+po.txt
+Public
+q4.sh
+rubber
+script1.sh
+script.sh
+sl
+snap
+sp
+sumofnnumbers.sh
+Templates
+ts.txt~
+uio.txt
+Videos
+xyz.txt~

@@ -1,0 +1,28 @@
+#! /bin/bash
+echo "length of arguments:$#"
+echo "list of arguments:$@"
+length=$#
+if [ $# -gt 0 ]
+then
+    case $1 in
+	a)
+	    for i in $len 
+	    do
+		sort -n $i
+		echo "$i"
+	    done
+	    ;;
+	d)
+	    for i in $len
+	    do
+		sort -nr $i
+		echo "$i"
+	    done
+	    ;;
+	*)
+	    echo "please pass -a/-d"
+	    ;;
+    esac 
+else
+    echo "pass through command line"
+fi

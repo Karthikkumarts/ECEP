@@ -1,0 +1,15 @@
+ID name E-mail PH-NO
+1000 karthik karthikkumarts1999@gmail.com karthik
+1001 manu manudr1996@gmail.com manu
+1002 harish hariharish@gmail.com harish
+1003 nagabhooshan nagabhooshana@gmail.com nagu
+askjkdj
+askdaksd
+adajks
+asjdksad
+adjsjak
+asdnjasd
+	
+
+
+	

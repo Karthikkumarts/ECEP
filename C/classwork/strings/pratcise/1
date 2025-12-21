@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main()
+{
+    char arr[20]="karthik";
+    char a[50];
+    strcpy(a,arr);
+    printf("%s\n",a);
+}

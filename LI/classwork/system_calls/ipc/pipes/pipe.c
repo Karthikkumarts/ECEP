@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+int main()
+{
+    //decalre to hold the file descriptor
+    int p[2];
+
+    //create the pipe
+    if(pipe(p) == -1)
+    {
+	perror("PIPE");
+	exit(EXIT_FAILURE);
+    }
+    printf("p[0] : %d :: p[1] :%d\n",p[0],p[1]);
+
+}
+
