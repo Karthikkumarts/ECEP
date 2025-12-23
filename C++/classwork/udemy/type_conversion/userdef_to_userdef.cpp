@@ -19,6 +19,7 @@ class product
 int main()
 {
 	product p{5};
+	//integer id = p.getinteger();
 	integer id;
 	id = p;
 }
