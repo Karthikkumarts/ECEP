@@ -6,6 +6,11 @@
 
 int main()
 {
+	//initialization
+	//integer a (5);
+	
+
+	//assignment
 	integer a;
 	std::cout<<"main function:" <<std::endl;
 	a = 5;

@@ -1,5 +1,6 @@
 #include<iostream>
 #include"rule_of_5.hpp"
+using namespace std;
 class number
 {
 	shallow m_value;
@@ -12,8 +13,14 @@ class number
 
 int main()
 {
-	number n1{1};
+	/*number n1{1};
 	number n2{2};
 	n2 = n1;
+//	n1 =6;*/
+
+	shallow n;
+	n = 5;
+
+
 }
 
