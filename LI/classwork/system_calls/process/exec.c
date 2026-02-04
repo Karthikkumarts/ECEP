@@ -3,29 +3,32 @@
 
 int main()
 {
-    printf("pid of the exec process : %d\n",getpid());
-    printf("pid of the exec parent process : %d\n",getppid());
+	printf("pid of the exec process : %d\n",getpid());
+	printf("pid of the exec parent process : %d\n",getppid());
 
-    /*execl()*/
+	/*execl()*/
 
-    //execl("/bin/ls","ls","-l",(char *)NULL); // ABSOLUTE PATH
-    //execl("/bin/ls","ls",(char *)NULL);
+	// execl("/bin/ls",NULL,(char*) NULL); // ABSOLUTE PATH undefined behaviour as args is NULL
+	//execl("/bin/ls","ls","-l",(char *)NULL); // ABSOLUTE PATH
+	//execl("/bin/ls","ls",(char *)NULL);
 
-    /*execlp()*/
+	/*execlp()*/
 
-    //execlp("ls","ls",(char * )NULL); //Relative path
+	// execlp("ls","ls",(char * )NULL); //Relative path
 
 
-    /*execv()*/
-    //char *const argv[]={"ls","-l",(char *)NULL};
-    //execv("/bin/ls",argv);
-   //execvp("/bin/ls",argv);
+	/*execv()*/
+	/*char *const argv[]={"ls","-l",(char *)NULL};*/
+	// execv("/bin/ls",argv);
+	//execvp("/bin/ls",argv);
 
-    /*execvp*/
+	/*execvp*/
 
-  char *const argv[]={"./exec2",(char*)NULL};
-    execvp("./exec2",argv);
-
-    printf("world\n");
+	char *const argv[]={"./exec2",(char*)NULL};
+	if(execvp("./exec2",argv) == -1)
+	{
+		printf("exec failed hence returned back\n");
+		perror("world\n");
+	}
 }
 

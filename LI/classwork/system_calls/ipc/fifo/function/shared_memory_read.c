@@ -42,8 +42,11 @@ int main()
 	printf("shared memory value : %s\n",(char *)buff);
     }*/
 
-    //printf("%d %d\n",shm,buff);
+    //printf("%ls\n",shm);
+
     printf("%d\n",*shm);
     shmdt(shm);
+    shmctl(shmid, IPC_RMID, NULL);
+
 }
 

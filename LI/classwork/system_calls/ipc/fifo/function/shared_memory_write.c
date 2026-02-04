@@ -24,17 +24,12 @@ int main()
 
   printf("shared memory id : %d\n",shmid);
   shm = shmat(shmid,NULL,0);
-  //printf("%d\n",*shm);
-  //printf("%d %d\n",*shm,*buff);
   printf("enter the number: ");
   scanf("%d",&num);
- /* buff = shmat(shmid,NULL,0);
-  printf("enter the character : ");
-  scanf("%s",ch);*/
 
   *shm = num;
 
-//  strcpy(buff,ch);
   shmdt(shm);
+
 }
 

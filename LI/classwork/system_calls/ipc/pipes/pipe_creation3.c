@@ -25,14 +25,16 @@ int main()
 	    printf("p[0] : %d :: p[1] :%d\n",p[0],p[1]);
 	    close(p[1]);
 	    dup2(p[0],0);
-	    execlp("wc","wc",(char *)NULL);
+	   // close(p[0]);
+	    execlp("wc","wc",(char *)NULL); // ls will be given and wc will be executed and prints the numbers
 	    break;
 	default:
 	    printf("parent process\n");
 	    printf("p[0] : %d :: p[1] :%d\n",p[0],p[1]);
 	    close(p[0]);
 	    dup2(p[1],1);
-	    execlp("ls","ls",(char *)NULL);
+	   // close(p[1]);
+	    execlp("ls","ls" , "-l",(char *)NULL); //why not printing because it is going to pipe not to the terminal
 	    break;
     }
 
