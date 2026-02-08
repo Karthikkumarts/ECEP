@@ -25,29 +25,29 @@ int main()
 
 void *produce(void *arf)
 {
-	sem_wait(&lock);
     for(int i = 1 ; i <= 10 ; i++)
     {
 	sem_wait(&empty);
+	sem_wait(&lock);
 	printf("produced item is : %d\n",i);
 	buff[(++rear)%MAX_BUFFER]=i;
 	sleep(1);
+	sem_post(&lock);
 	sem_post(&full);
     }
-	sem_post(&lock);
 }
 
 void *consume(void *arg)
 {
-    sem_wait(&lock);
     int item;
     for(int i = 1 ; i <= 10 ; i++)
     {
     sem_wait(&full);
+    sem_wait(&lock);
     item=buff[(++front)%MAX_BUFFER];
     printf("consume item : %d\n",item);
     sleep(1);
+    sem_post(&lock);
     sem_post(&empty);
     }
-	sem_post(&lock);
 }

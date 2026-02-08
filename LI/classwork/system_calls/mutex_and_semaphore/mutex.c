@@ -10,12 +10,12 @@ void *thread_func(void *arg)
 {
     while(1)
     {
-//	pthread_mutex_lock(&lock);
+	pthread_mutex_lock(&lock);
 	counter = 0;
 	counter += 5;
 	counter += 10;
 	printf("%d\n",counter);
-//	pthread_mutex_unlock(&lock);
+	pthread_mutex_unlock(&lock);
     }
     return NULL;
 }
@@ -33,7 +33,7 @@ int main()
     pthread_create(&thread2,NULL,thread_func,NULL);
     pthread_join(thread1,NULL);
     pthread_join(thread2,NULL);	
-    pthread_mutex_lock(&lock);
+ //   pthread_mutex_lock(&lock);
 
     pthread_mutex_destroy(&lock);
     return 0;

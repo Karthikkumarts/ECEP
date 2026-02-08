@@ -5,7 +5,7 @@ int main()
 {
     printf("enter ctrl+c\n");
     //regitering the signal
-    //signal(SIGINT,SIG_DFL); //default action
+   // signal(SIGINT,SIG_DFL); //default action
     signal(SIGINT,SIG_IGN); //signal is ignored
     while(1);
 }
