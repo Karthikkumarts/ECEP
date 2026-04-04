@@ -10,5 +10,6 @@ int main()
     printf("%p\n",vptr);
     printf("%d\n",*(int *)vptr + 3);
     printf("%d\n",((int *)vptr)[3]);
+    printf("my : %d\n",*((int*)vptr +1));
     return 0;
 }

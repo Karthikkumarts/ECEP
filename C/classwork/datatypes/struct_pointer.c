@@ -18,5 +18,7 @@ int main()
     printf("%s\n",sptr->name);
     sptr->id=50;
     printf("%d\n",sptr->id);
+
+    printf("s1.id : %d\n",s1.id);
     return 0;
 }

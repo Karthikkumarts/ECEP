@@ -9,10 +9,13 @@ int main()
 	exit(1);
     printf("allocated memory\n");
     printf("ptr[0] = %d\n",ptr[0]);
+    printf("ptr[0] = %d\n",ptr[1]);
+    
 }
 void alloc_mem(int **pptr,int nmemb)
 {
    *pptr=(int *)malloc(nmemb * sizeof(int));
     **pptr=2;
+    *(*pptr+1) = 10;
 }
 

@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define print(x) #x
+#define print(x) #x //this # will convert literal to strings
 //#define print "hello"
 int main()
 {

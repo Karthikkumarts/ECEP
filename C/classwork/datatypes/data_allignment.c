@@ -27,7 +27,8 @@ double num3;*/
 int main()
 {
     struct student s1;
-    printf("%zu\n",sizeof(struct student));
+    printf("%zu\n",sizeof(s1));
+   // printf("%zu\n",sizeof(struct student));
   //  printf("%lu\n",&s1.ch);
 //    printf("%lu\n",&s1.ch2);
   //  printf("%lu\n",&s1.num);

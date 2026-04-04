@@ -3,12 +3,17 @@ void fun(int row,int col,int (*p)[col]);
 int main()
 {
      int array[3]={1,2,3};
+     //int array_1[3]={1,2,3};
+
        int (*ptr)[3];
-       ptr=&array;
+       ptr = &array;
+      // ptr[0]=&array; //try ou these next time
+      // ptr[1]=&array_1;
+       
        printf("%d\n",**ptr);
        printf("%u\n",*ptr);
        printf("%u\n",*ptr+1);
-       printf("%u\n",*((*(ptr)+1)));
+       printf("%d\n",*((*(ptr)+1)));
 
 
 //    int (*p)[3];

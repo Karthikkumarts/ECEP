@@ -4,7 +4,7 @@ int main()
    int a[3][3]={1,2,3,4,5,6,7,8,9};
   printf("sizeof(a) = %u\n",sizeof(a));
   printf("sizeof(a[0]) =  %u\n",sizeof(a[0]));
-  printf("sizeof(*a) = %u\n",sizeof(*a));
+  printf("sizeof(*a) = %u\n",sizeof(*a)); // base add of 1st 1d array
   printf("sizeof(a[0][0]) =  %u\n",sizeof(a[0][0]));
 
   printf("a = %lu\n",a);
@@ -14,6 +14,9 @@ int main()
   printf("&a[0]+1 = %lu\n",&a[0]+1);
   printf("a[0]+1 = %lu\n",a[0]+1);
   printf("&a[0][0]+1 = %lu\n",&a[0][0]+1);
+
+  printf("*(&a[0]+1) = %d\n",**(&a[0]+1));
+
 }
 
 

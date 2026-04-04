@@ -41,7 +41,7 @@ void display()
 	printf("%d->",temp->data);
 	temp=temp->link;
     }
-    printf("NULL");
+    printf("%d->NULL",temp->data);
 }
 void dequeue()
 {
