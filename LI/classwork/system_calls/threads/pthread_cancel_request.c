@@ -4,53 +4,53 @@
 
 void *thread_func(void *data)
 {
-    int res,i;
+	int res,i;
 
-   // res = pthread_setcancelstate(PTHREAD_CANCEL_DISABLE,NULL);
- //     res = pthread_setcancelstate(PTHREAD_CANCEL_ENABLE,NULL);
-  //    pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS,NULL);
-     //pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED,NULL);
-   // if(res != 0)
-   // {
-//	printf("thread cancellation state failed\n");
-//	return 1;
-  //  }
+	// res = pthread_setcancelstate(PTHREAD_CANCEL_DISABLE,NULL);
+	res = pthread_setcancelstate(PTHREAD_CANCEL_ENABLE,NULL);
+	 //   pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS,NULL);
+	//pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED,NULL);
+	if(res != 0)
+	{
+		printf("thread cancellation state failed\n");
+		return 1;
+	}
 
-    printf("thread function still running\n");
-    for(i = 1 ; i <= 10 ; i++)
-    {
-	printf("%d thread function running\n",i);
-	sleep(1);
-    }
-return NULL;
+	printf("thread function still running\n");
+	for(i = 1 ; i <= 10 ; i++)
+	{
+		printf("%d thread function running\n",i);
+		sleep(1); //if you enable deffered disable this sleep and check , it will execute for 10 times , because deffered had not got and cancelation point
+	}
+	return NULL;
 }
 
 
 int main()
 {
-    pthread_t tid,tid2;
-    int res;
-    void *thread_result;
+	pthread_t tid,tid2;
+	int res;
+	void *thread_result;
 
-    res = pthread_create(&tid,NULL,&thread_func,NULL);
+	res = pthread_create(&tid,NULL,&thread_func,NULL);
 
-    if(res != 0)
-    {
-	printf("thread creation failed");
-	return 1;
-    }
+	if(res != 0)
+	{
+		printf("thread creation failed");
+		return 1;
+	}
 
-    sleep(5);
-    printf("creating cancelling\n");
-    res = pthread_cancel(tid);
-    if(res != 0)
-    {
-	printf("thread creation failed");
-	return 1;
-    }
+	sleep(5);
+	printf("creating cancelling\n");
+	res = pthread_cancel(tid);
+	if(res != 0)
+	{
+		printf("thread creation failed");
+		return 1;
+	}
 
-    pthread_join(tid,NULL);
-    return 0;
+	pthread_join(tid,NULL);
+	return 0;
 
 }
 
