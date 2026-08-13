@@ -9,7 +9,8 @@
 int main()
 {
   int shmid,num;
-  int *shm;
+  //int *shm; //this is for int 
+  char *shm; // this is for char ----> To send the both we must use structure which is shown in shared_memory_write2.c
   char *buff;
   char ch[6];
   key_t key = 'A';
@@ -27,7 +28,10 @@ int main()
   printf("enter the number: ");
   scanf("%d",&num);
 
-  *shm = num;
+  char *buf = "karthik";
+  //*shm = num;
+  
+  strcpy(shm ,buf);
 
   shmdt(shm);
 

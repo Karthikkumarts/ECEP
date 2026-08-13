@@ -8,7 +8,8 @@
 int main()
 {
     int shmid,num;
-    int *shm;
+    char *shm;
+    //int *shm;
     char *buff;
     key_t key = 'A';
 
@@ -44,7 +45,8 @@ int main()
 
     //printf("%ls\n",shm);
 
-    printf("%d\n",*shm);
+    //printf("%d\n",*shm);
+    printf("%s\n",shm);
     shmdt(shm);
     shmctl(shmid, IPC_RMID, NULL);
 
