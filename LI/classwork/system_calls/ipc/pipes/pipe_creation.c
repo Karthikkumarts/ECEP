@@ -37,6 +37,9 @@ int main()
 	      /*printf("enter the number : \n"); // here we cant expect the result because
 	      scanf("%d",&num);*/  // during scanf , scheduler will give cpu to child process as parent will wait for the user to pass the input 
 	    write(p[1],&num,sizeof(num));
+	    //add wait to avoid child to become zombie
+	    //wait(NULL);
+	    //printf("waiting to child terminate");
 	    close(p[1]);
 	    break;
     }
