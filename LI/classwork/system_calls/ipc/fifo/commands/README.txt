@@ -1,4 +1,4 @@
-mknod -m 0644 mknodd p
+mknod -m 0644 mknod p
 -m -> file permission
 p->pipe
 b->block device
