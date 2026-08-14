@@ -21,6 +21,10 @@ int main()
 
     pthread_join(tid1,NULL);
     pthread_join(tid2,NULL);
+	sem_destroy(&full);
+    sem_destroy(&empty);
+    sem_destroy(&lock);
+
 }
 
 void *produce(void *arf)
