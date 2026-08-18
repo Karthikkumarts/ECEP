@@ -7,10 +7,10 @@ pthread_mutex_t lock;
 
 void * print_odd(void *)
 {
-        while(count <= MA)
+        while(count <= MA) // for loop cant be used because it will be limited to 10 counts , assume if count uis even the thread is locked and unlocked untill for 10 times , instead use while loop we can check until the count is less than MAX
         {
-                pthread_mutex_lock(&lock);
-                if((count <= MA) &&((count %2) !=0))
+                pthread_mutex_lock(&lock); 
+                if((count <= MA) &&((count %2) !=0)) //Between the while check and the pthread_mutex_lock(), another thread may change count
                 {
                         printf("odd : %d\n",count);
                         count++;
