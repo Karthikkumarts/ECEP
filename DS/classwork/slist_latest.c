@@ -40,8 +40,8 @@ void insert_last(slist **head)
         {
                 temp = temp->link;
         }
-                slist *new = create_node();
-                temp->link = new;
+        slist *new = create_node();
+        temp->link = new;
 }
 void insert_after(slist ** head)
 {
@@ -137,6 +137,34 @@ void delete_last(slist **head)
 
 
 }
+void delete_key(slist ** head)
+{
+        if(*head == NULL)
+        {
+                printf("list is empty\n");
+                return;
+        }
+        printf("enter the key : ");
+        int key ;
+        scanf("%d",&key);
+
+        slist * temp = *head,*prev= NULL;
+        if((*head)->data == key)
+        {
+                *head = temp->link;
+                free(temp);
+                return;
+        }
+        while(temp != NULL && temp->data != key)
+        {
+                prev=temp;
+                temp =temp->link;
+        }
+
+        prev->link = temp->link;
+        free(temp);
+
+}
 void delete_after(slist ** head)
 {
         if(*head == NULL)
@@ -210,6 +238,22 @@ void sort(slist * head)
                 }
         }
 }
+void reverse(slist ** head)
+{
+        printf("-------reverse---------\n");
+        slist * next,*current,*prev;
+        prev =NULL;
+        current = next = *head;
+
+        while(next != NULL)
+        {
+                next = next->link;
+                current->link =prev;
+                prev = current;
+                current = next;
+        }
+        *head = prev;
+}
 void display(slist * head)
 {
         printf("display\n");
@@ -241,11 +285,16 @@ int main()
         //delete_first(&head);
         //delete_last(&head);
 
-        delete_after(&head);
+        //delete_after(&head);
+        //display(head);
+        //delete_before(&head);
+        //display(head);
+        //sort(head);
+        //display(head);
+        //reverse(&head);
+
+        delete_key(&head);
         display(head);
-        delete_before(&head);
-        display(head);
-        sort(head);
-        display(head);
+
 
 }
