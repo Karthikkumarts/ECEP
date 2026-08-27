@@ -193,6 +193,23 @@ void delete_before(slist **head)
         prev->link = temp->link;
         free(temp);
 }
+void sort(slist * head)
+{
+        slist *i,*j;
+        int temp;
+        for(i = head ; i != NULL ; i=i->link)
+        {
+                for(j = i->link ; j != NULL ; j=j->link)
+                {
+                        if(i->data > j->data)
+                        {
+                                temp = i->data;
+                                i->data = j->data;
+                                j->data = temp;
+                        }
+                }
+        }
+}
 void display(slist * head)
 {
         printf("display\n");
@@ -227,6 +244,8 @@ int main()
         delete_after(&head);
         display(head);
         delete_before(&head);
+        display(head);
+        sort(head);
         display(head);
 
 }
